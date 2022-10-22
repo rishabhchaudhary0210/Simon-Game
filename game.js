@@ -27,12 +27,19 @@ function patternDisplay() {
 
 console.log(chosenColor);
 let start = false;
-addEventListener("keypress", function (event) {
+// addEventListener("keypress", function (event) {
+//     if (start == false) {
+//         if (event.key === "a" || event.key === "A") {
+//             patternDisplay();
+//             start = true;
+//         }
+//         console.log(event.key);
+//     }
+// });
+addEventListener("click", function (event) {
     if (start == false) {
-        if (event.key === "a" || event.key === "A") {
             patternDisplay();
             start = true;
-        }
         console.log(event.key);
     }
 });
@@ -68,7 +75,7 @@ function gameOver(){
     primaryHeading.innerHTML="BETTER LUCK NEXT TIME";
     setTimeout(function (){
         location.reload();
-    },5000);
+    },3000);
 }
 
 function checkPattern(){
@@ -88,3 +95,6 @@ function checkPattern(){
 // function checkPattern(){
 
 // }
+document.getElementsByTagName("body").addEventListener("click",(event)=>{
+    console.log(event);
+})
